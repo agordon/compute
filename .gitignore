@@ -32,8 +32,6 @@ config/install-sh
 config/ltmain.sh
 config/missing
 
-Makefile
-*/Makefile
 Makefile.in
 */Makefile.in
 
