@@ -13,9 +13,10 @@ The latest development version is available at <{{site.calc_git_url}}>.
 
 Pre-compiled binaries are available for the following platforms:
 
-* [Linux]({{site.calc_bin_linux_url}})
+* [Debian/Ubuntu 64Bit package]({{site.calc_deb_64bit_url}})
+* [Linux-64bit]({{site.calc_bin_linux_64bit_url}})
 * [Mac OS X]({{site.calc_bin_macosx_url}})
-* [FreeBSD 10]({{site.calc_bin_freebsd_url}})
+* [FreeBSD 10-64bit]({{site.calc_bin_freebsd_64bit_url}})
 
 ### HomeBrew/LinuxBrew
 
