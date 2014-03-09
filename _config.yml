@@ -1,0 +1,13 @@
+name: Calc
+markdown: redcarpet
+pygments: true
+permalink: none
+calc_version: 0.0.3
+calc_releases: https://github.com/agordon/calc/releases/XXX
+calc_git_url: https://github.com/agordon/calc.git
+calc_src_tarball_filename: calc-0.0.3.tar.gz
+calc_src_tarball_url: https://github.com/agordon/calc/releases/XXX
+calc_bin_linux_url: https://github.com/agordon/calc/releases/XXX
+calc_bin_macosx_url: https://github.com/agordon/calc/releases/XXX
+calc_bin_freebsd_url: https://github.com/agordon/calc/releases/XXX
+
