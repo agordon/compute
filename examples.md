@@ -55,7 +55,7 @@ Using `calc`, find the lowest (min) and highest (max) score for each College Maj
 
 Similarly, find the number of students, mean score and sample-standard-deviation for each College major:
 
-    $ calc -g 2 count 3 mean 3 sstdev 3 < scores.txt
+    $ calc -g 2 mean 3 sstdev 3 < scores.txt
     Arts             68.9474  10.4215
     Business         87.3636  5.18214
     Health-Medicine  90.6154  9.22441
