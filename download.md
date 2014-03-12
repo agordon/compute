@@ -42,7 +42,7 @@ sudo make install
 
 ### Compile from GIT repository
 
-To compile from the [GIT repository]({{site.calc_git_url}}), run the following commands:
+To compile from the [GIT repository]({{site.calc_git_url}}), run the following commands (and see 'prerequisites', below):
 
 ```sh
 git clone {{site.calc_git_url}}
@@ -63,10 +63,16 @@ To compile from the GIT repository, the following programs are needed: automake,
 On **Debian/Ubuntu** systems, use the following command:
 
 ```sh
-sudo apt-get install build-essential help2man gperf autoconf automake gettext
+sudo apt-get install build-essential help2man gperf autoconf automake gettext autopoint
 ```
 
-On **Mac OS X** with XCode and HomeBrew, use the following commands:
+On **RedHat/CentOS** systems, use the following command:
+
+```sh
+sudo yum install gcc git make automake autoconf gettext pkgconfig gperf help2man
+```
+
+On **Mac OS X** with **XCode** and HomeBrew, use the following commands:
 
 ```sh
 brew install help2man
