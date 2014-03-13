@@ -21,6 +21,19 @@ EXTRA_DIST = \
 	m4/gnulib-cache.m4 \
 	man/compute.x
 
+
+EXTRA_DIST += \
+      debian/compat \
+      debian/compute.dirs \
+      debian/source/format \
+      debian/watch \
+      debian/copyright \
+      debian/control \
+      debian/rules \
+      debian/changelog
+
+
+
 SUBDIRS = po
 
 ##

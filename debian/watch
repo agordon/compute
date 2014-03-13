@@ -1,0 +1,2 @@
+version=3
+https://github.com/agordon/compute/releases .*/compute/releases/download/.*/compute-(\d\S*)\.tar\.gz
