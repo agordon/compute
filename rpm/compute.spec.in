@@ -1,18 +1,18 @@
 Name:           compute
-Version:        X.Y.Z
+Version:        @VERSION@
 Release:        1%{?dist}
 Summary:        Simple Command-line Calculations
 
-Group:          Applications/File 
+Group:          Applications/File
 License:        GPLv3+
 URL:            http://agordon.github.io/compute/
-Source0:        https://s3.amazonaws.com/agordon/compute/src/compute-X.Y.Z.tar.gz
+Source0:        https://s3.amazonaws.com/agordon/compute/src/compute-@VERSION@.tar.gz
 
-#BuildRequires:  
-#Requires:       
+#BuildRequires:
+#Requires:
 
 %description
-The 'Compute' program provices simple command-line calculation
+The 'compute' program provides simple command-line calculation
 (sum,min,max,mean,stdev,etc.) on tabular textual input files.
 
 
@@ -47,5 +47,5 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Wed Mar 12 2014 A. Gordon <assafgordon@gmail.com> 1.0.1
-- Initial Release
+* @RPMDATE@ A. Gordon <assafgordon@gmail.com> @VERSION@
+- Packaged @VERSION@

@@ -29,42 +29,30 @@ PROJECT=compute
 TARBALL=${PROJECT}-${BUILDVER}.tar.gz
 [ -e "$TARBALL" ] || die "Source tarball not found '$TARBALL' - did you run 'make dist'?"
 
-##
-## Check the required directories
-##
-[ -d "$HOME/rpmbuild/SPECS" ] || die "Can't find '$HOME/rpmbuild/SPECS' directory, did you run 'rpmdev-setuptree' ?"
-[ -d "$HOME/rpmbuild/SOURCES" ] || die "Can't find '$HOME/rpmbuild/SOURCES' directory, did you run 'rpmdev-setuptree' ?"
-
 ## Detect architecture/distribution (ugly hack)
 ARCH=$(rpm --eval "%{_arch}") || die "failed to detect build architecture (e.g. x86_64/i686)"
 DIST=$(rpm --eval "%{dist}") || die "failed to detect build distribution (e.g. el5/el6)"
 DIST=${DIST#.} # Remove prefix dot, if any
 
-##
-## Update the version information in the SPEC file
-##
-cat rpm/compute.spec |
-	sed "s/X\.Y\.Z/$BUILDVER/" > $HOME/rpmbuild/SPECS/compute.spec ||
-		die "failed to create updated SPEC file"
 
 ##
-## Copy the tarball to the RPM build directory
+## Build the 'rpmbuild' tree
 ##
-#cp "$TARBALL"  "$HOME/rpmbuild/SOURCES/${PROJECT}-${RELVER}.tar.gz" ||
-cp "$TARBALL"  "$HOME/rpmbuild/SOURCES/" ||
-	die "failed to copy tarball"
+DIR=$(mktemp -d rpmbuild.XXXXX) || die "failed to create temporary rpm build directory"
+mkdir -p "$DIR/SOURCES" "$DIR/BUILD" \
+          "$DIR/BUILDROOT" "$DIR/RPMS" "$DIR/SRPMS" "$DIR/SPECS" || exit 1
+cp rpm/compute.spec "$DIR/SPECS" || exit 1
+cp "$TARBALL" "$DIR/SOURCES" || exit 1
 
 ##
 ## Build the RPM
 ##
-cd "$HOME/rpmbuild/SPECS" || exit 1
-rpmbuild -ba compute.spec || die "rpmbuild failed"
-
+rpmbuild --define="_topdir $PROJECT_DIR/$DIR" -ba $DIR/SPECS/compute.spec || die "rpmbuild failed"
 
 ## This should be the resulting DEB file
 RPMVER=1
 RPMFILE=${PROJECT}-${BUILDVER}-${RPMVER}.${DIST}.${ARCH}.rpm
-RPMFULLPATH=$HOME/rpmbuild/RPMS/$ARCH/$RPMFILE
+RPMFULLPATH=$DIR/RPMS/$ARCH/$RPMFILE
 
 [ -e "$RPMFULLPATH" ] || die "Failed to find expected RPM package file '$RPMFULLPATH' after rpmbuild"
 cp "$RPMFULLPATH" "$PROJECT_DIR" || die "Failed to copy '$RPMFULLPATH' to project's directory"

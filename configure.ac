@@ -101,8 +101,14 @@ fi
 AM_GNU_GETTEXT_VERSION([0.17])
 AM_GNU_GETTEXT([external])
 
+# Generate timestamps for RPM/DEB packaging
+AC_SUBST([RPMDATE],[`date +"%a %b %d %Y"`])
+AC_SUBST([DEBDATE],[`date +"%a, %d %b %Y %H:%M:%S %z"`])
+
 AC_CONFIG_FILES([Makefile
 	po/Makefile.in
+	debian/changelog
+	rpm/compute.spec
 ])
 
 AC_OUTPUT
