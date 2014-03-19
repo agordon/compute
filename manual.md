@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Calc - Manual
+title: compute - Manual
 ---
 
-### Calc Usage
+### compute Usage
 
-Run `calc --help` to see the help screen:
+Run `compute --help` to see the help screen:
 
 ```sh
-$ calc --help
-Usage: calc [OPTION] op col [op col ...]
+$ compute --help
+Usage: compute [OPTION] op col [op col ...]
 Performs numeric/string operations on input from stdin.
 
 'op' is the operation to perform on field 'col'.
@@ -58,7 +58,7 @@ Examples:
 
 Print the sum and the mean of values from column 1:
 
-  $ seq 10 | calc sum 1 mean 1
+  $ seq 10 | compute sum 1 mean 1
   55  5.5
 
 Group input based on field 1, and sum values (per group) on field 2:
@@ -68,7 +68,7 @@ Group input based on field 1, and sum values (per group) on field 2:
   A  5
   B  9
   B  11
-  $ calc -g 1 sum 2 < example.txt
+  $ compute -g 1 sum 2 < example.txt
   A  15
   B  20
 
@@ -81,13 +81,13 @@ Unsorted input must be sorted (with '-s'):
   C  1
   A  5
   B  11
-  $ calc -s -g1 sum 2 < example.txt
+  $ compute -s -g1 sum 2 < example.txt
   A 15
   B 20
   C 5
 
 Which is equivalent to:
-  $ cat example.txt | sort -k1,1 | calc -g 1 sum 2
+  $ cat example.txt | sort -k1,1 | compute -g 1 sum 2
 
 ```
 

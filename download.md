@@ -1,42 +1,42 @@
 ---
 layout: default
-title: Calc - download
+title: compute - download
 ---
 
 ### Version
 
-The latest released version is {{ site.calc_version }} .
+The latest released version is {{ site.compute_version }} .
 
-The latest released version source code is [{{site.calc_src_tarball_filename}}]({{site.calc_src_tarball_url}})
+The latest released version source code is [{{site.compute_src_tarball_filename}}]({{site.compute_src_tarball_url}})
 
-The latest development version is available at <{{site.calc_git_url}}>.
+The latest development version is available at <{{site.compute_git_url}}>.
 
 ### Download pre-compiled binaries
 
 Pre-compiled binaries are available for the following platforms:
 
-* [Debian/Ubuntu 64Bit package]({{site.calc_deb_64bit_url}})
-* [RedHat/CentOS 64Bit package]({{site.calc_rpm_64bit_url}})
-* [Linux-64bit]({{site.calc_bin_linux_64bit_url}})
-* [Mac OS X]({{site.calc_bin_macosx_url}})
-* [FreeBSD 10-64bit]({{site.calc_bin_freebsd_64bit_url}})
+* [Debian/Ubuntu 64Bit package]({{site.compute_deb_64bit_url}})
+* [RedHat/CentOS 64Bit package]({{site.compute_rpm_64bit_url}})
+* [Linux-64bit]({{site.compute_bin_linux_64bit_url}})
+* [Mac OS X]({{site.compute_bin_macosx_url}})
+* [FreeBSD 10-64bit]({{site.compute_bin_freebsd_64bit_url}})
 
 ### HomeBrew/LinuxBrew
 
-On Mac OS X with [HomeBrew](http://brew.sh/) or on Linux with [LinuxBrew](https://github.com/Homebrew/linuxbrew/), install `calc` by running the following:
+On Mac OS X with [HomeBrew](http://brew.sh/) or on Linux with [LinuxBrew](https://github.com/Homebrew/linuxbrew/), install `compute` by running the following:
 
 ```sh
-brew install agordon/gordon/calc
+brew install agordon/gordon/compute
 ```
 
 ### Compile from source code
 
-To compile from source code, download [{{site.calc_src_tarball_filename}}]({{site.calc_src_tarball_url}})
+To compile from source code, download [{{site.compute_src_tarball_filename}}]({{site.compute_src_tarball_url}})
 
 ```sh
-wget {{site.calc_src_tarball_url}}
-tar -xzf {{site.calc_src_tarball_filename}}
-cd calc-{{site.calc_version}}
+wget {{site.compute_src_tarball_url}}
+tar -xzf {{site.compute_src_tarball_filename}}
+cd compute-{{site.compute_version}}
 ./configure
 make
 make check
@@ -45,11 +45,11 @@ sudo make install
 
 ### Compile from GIT repository
 
-To compile from the [GIT repository]({{site.calc_git_url}}), run the following commands (and see 'prerequisites', below):
+To compile from the [GIT repository]({{site.compute_git_url}}), run the following commands (and see 'prerequisites', below):
 
 ```sh
-git clone {{site.calc_git_url}}
-cd calc
+git clone {{site.compute_git_url}}
+cd compute
 ./bootstrap
 ./configure
 make
@@ -57,9 +57,7 @@ make check
 sudo make install
 ```
 
-### Prerequisites
-
-To use the `--sort` with `--headers` options together, **GNU Sed** version 4.2.2 is required (it is not required if using just `--sort` or just `--headers` or neither of them).
+### Prerequisites - when compiling from GIT repository
 
 To compile from the GIT repository, the following programs are needed: automake,autoconf,gcc/clang,gperf,help2man.
 
