@@ -17,10 +17,11 @@ cd $(dirname "$0")/.. || die "failed to set directory"
 BUILDVER=$(./build-aux/git-version-gen .version)
 [ -z "$BUILDVER" ] && die "failed to detect latest build version"
 
-## Release version (e.g. "1.0.3")
-## NOTE: this is an ugly hack - as it could lead to duplicated release versions...
-RELVER=$(echo "$BUILDVER" |  grep -E '^[0-9]+\.[0-9]+\.[0-9]+' | sed -r 's/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/')
-[ -z "$RELVER" ] && die "failed to detect release version based on build version '$BUILDVER'"
+CLEANTAG=$(echo "$BUILDVER" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+' | sed -r 's/^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+).*/\1/')
+
+echo "$BUILDVER" | grep -q -- "-" &&
+	die "Error: packaged versions must not contain git chageset version (current version: '$BUILDVER').    To build DEB pacakge, add a temporary tag (e.g. 'git tag -m \"\" -a v$CLEANTAG'), and remove it after build"
+
 
 ## The distribution file should already exist
 PROJECT=compute
@@ -32,9 +33,9 @@ eval `dpkg-architecture` || die "failed to run 'dpkg-architecture' - is 'dpkg-de
 
 DIR=$(mktemp -d debbuild.XXXXXXX) || die "failed to create temporary build directory"
 
-cp "$TARBALL"  "${DIR}/${PROJECT}_${RELVER}.orig.tar.gz" || die "failed to copy tarball"
+cp "$TARBALL"  "${DIR}/${PROJECT}_${BUILDVER}.orig.tar.gz" || die "failed to copy tarball"
 cd "$DIR" || exit 1
-tar -xzf "${PROJECT}_${RELVER}.orig.tar.gz" || die "failed to extract source tarball"
+tar -xzf "${PROJECT}_${BUILDVER}.orig.tar.gz" || die "failed to extract source tarball"
 
 ## Ugly Hack NOTE:
 ## The tarball must be named with ".orig" for the debian build system,
@@ -49,7 +50,7 @@ cd .. || exit 1
 DEBVER=1
 
 ## This should be the resulting DEB file
-DEBFILE=${PROJECT}_${RELVER}-${DEBVER}_${DEB_BUILD_ARCH}.deb
+DEBFILE=${PROJECT}_${BUILDVER}-${DEBVER}_${DEB_BUILD_ARCH}.deb
 [ -e "$DEBFILE" ] || die "Failed to find expected debian package file '$DIR/$DEBFILE' after debuild"
 cp "$DEBFILE" .. || die "Failed to copy '$DEBFILE' to project's directory"
 cd .. || exit 1

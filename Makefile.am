@@ -17,6 +17,8 @@ EXTRA_DIST = \
         build-aux/get_travis_dist.sh \
         build-aux/rebuild-coverage.sh \
         build-aux/gen-coverage-report.sh \
+	build-aux/debian-build-package.sh \
+	build-aux/rpm-build-package.sh \
 	build-aux/git-log-fix \
 	m4/gnulib-cache.m4 \
 	man/compute.x
@@ -30,7 +32,8 @@ EXTRA_DIST += \
       debian/copyright \
       debian/control \
       debian/rules \
-      debian/changelog
+      debian/changelog \
+      rpm/compute.spec
 
 
 
