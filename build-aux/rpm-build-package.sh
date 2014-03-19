@@ -15,7 +15,7 @@ cd $(dirname "$0")/.. || die "failed to set directory"
 PROJECT_DIR=$(pwd) || die "failed to get project's directory"
 
 ## Build version (e.g. "1.0.3.2-abcd")
-BUILDVER=$(./build-aux/git-version-gen .version)
+BUILDVER=$(./build-aux/git-version-gen .tarball-version)
 [ -z "$BUILDVER" ] && die "failed to detect latest build version"
 
 CLEANTAG=$(echo "$BUILDVER" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+' | sed -r 's/^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+).*/\1/')

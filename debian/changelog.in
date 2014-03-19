@@ -1,5 +1,0 @@
-compute (@VERSION@-1) UNRELEASED; urgency=low
-
-  * Packaged @VERSION@
-
- --  <assafgordon@gmail.com>  @DEBDATE@
