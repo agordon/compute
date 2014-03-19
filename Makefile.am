@@ -32,7 +32,7 @@ EXTRA_DIST += \
       debian/copyright \
       debian/control \
       debian/rules \
-      debian/changelog.in \
+      debian/changelog \
       rpm/compute.spec.in
 
 
