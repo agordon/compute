@@ -59,23 +59,17 @@ sudo make install
 
 ### Prerequisites - when compiling from GIT repository
 
-To compile from the GIT repository, the following programs are needed: automake,autoconf,gcc/clang,gperf,help2man.
+To compile from the GIT repository, the following programs are needed: automake,autoconf,gcc/clang,gperf.
 
 On **Debian/Ubuntu** systems, use the following command:
 
 ```sh
-sudo apt-get install build-essential help2man gperf autoconf automake gettext autopoint
+sudo apt-get install build-essential gperf autoconf automake gettext autopoint
 ```
 
 On **RedHat/CentOS** systems, use the following command:
 
 ```sh
-sudo yum install gcc git make automake autoconf gettext pkgconfig gperf help2man
-```
-
-On **Mac OS X** with **XCode** and HomeBrew, use the following commands:
-
-```sh
-brew install help2man
+sudo yum install gcc git make automake autoconf gettext pkgconfig gperf
 ```
 
