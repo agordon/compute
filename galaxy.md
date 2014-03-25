@@ -7,7 +7,7 @@ title: compute - Galaxy Tool
 
 [Galaxy](http://usegalaxy.org/) is an open, web-based platform for accessible, reproducible, and transparent computational biomedical research. In **Galaxy**, the `compute` can be used directly from a web-browser, without installing the program or typing commands on the terminal.
 
-To try the `compute` tool in Galaxy, visit the [Compute Demo Galaxy Server](http://54.80.217.14/).
+To try the `compute` tool in Galaxy, visit the [Compute Demo Galaxy Server](http://computedemo.teamerlich.org/).
 
 ### Installing Compute Tool in a Galaxy Server
 
