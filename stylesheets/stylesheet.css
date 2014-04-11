@@ -144,14 +144,18 @@ aside#sidebar p.repo-owner a {
 
 a.button {
   width: 134px;
-  height: 58px;
+  height: 80px;
   line-height: 1.2;
   font-size: 23px;
   color: #fff;
   padding-left: 68px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+}
+div.button_text_22 {
   padding-top: 22px;
-  /*font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; */
-  font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
+}
+div.button_text_10 {
+  padding-top: 12px;
 }
 a.button small {
   display: block;

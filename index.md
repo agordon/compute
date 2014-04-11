@@ -42,11 +42,36 @@ Life-Sciences      55.3333       20.606
 Social-Sciences    60.2667       17.2273
 ```
 
-compute is perfect for interactive exploration of textual data, and for automating tasks in shell scripts. See the [Examples](./examples.html) section for real-world use-cases in system-administration, bioinformatics, shell scripting, and more.
+compute is perfect for interactive exploration of textual data, and for
+automating tasks in shell scripts. See the [Examples](./examples.html)
+section for real-world use-cases in system-administration, bioinformatics,
+shell scripting, and more.
 
-compute is closely modelled after existing unix utilities (e.g. sort, join, awk, sed) and intergrates well with these programs. See the [Manual](./manual.html) for more details and examples.
+compute has a rich set of **statistical functions**, to quickly assess information
+in textual input files. An example of calculating basic statistic (mean, 1st
+quartile, median, 3rd quarile, IQR, sample-standard-deviation, and p-value of
+Jarque-Bera test for normal distribution:
 
-compute is written in portable C, compiles on many platforms (Linux, Mac-OS-X, FreeBSD), and includes a comprehensive test-suit to ensure correctness and robustness. A single pre-compiled binary can be downloaded and used on most modern systems without the need to compile from source - See the [Download](./download.html) section for more details.
+```sh
+$ compute -H mean 1 q1 1 median 1 q3 1 iqr 1 sstdev 1 jarque 1 < FILE.TXT
+mean(x)   q1(x)  median(x)  q3(x)   iqr(x)  sstdev(x)  jarque(x)
+45.32     23     37         61.5    38.5    30.4487    8.0113-09
+```
+
+See the [Statistics Examples](./example_stats.html) page for more details about the
+statistic functions in compute.
+
+
+
+compute is closely modelled after existing unix utilities (e.g. sort, join,
+awk, sed) and intergrates well with these programs. See the
+[Manual](./manual.html) for more details and examples.
+
+compute is written in portable C, compiles on many platforms (Linux, Mac-OS-X, FreeBSD),
+and includes a comprehensive test-suit to ensure correctness and robustness.
+A single pre-compiled binary can be downloaded and used on most modern systems
+without the need to compile from source -
+See the [Download](./download.html) section for more details.
 
 ### About
 
