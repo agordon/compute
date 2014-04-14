@@ -12,3 +12,4 @@ compute_rpm_64bit_url: https://s3.amazonaws.com/agordon/compute/bin/compute-1.0.
 compute_bin_linux_64bit_url: https://s3.amazonaws.com/agordon/compute/bin/compute-1.0.4-bin__Linux__x86_64.tar.gz
 compute_bin_macosx_url: https://s3.amazonaws.com/agordon/compute/bin/compute-1.0.4-bin__MacOSX__x86_64.tar.gz
 compute_bin_freebsd_64bit_url: https://s3.amazonaws.com/agordon/compute/bin/compute-1.0.4-bin__FreeBSD__amd64.tar.gz
+compute_bin_win64_url: https://s3.amazonaws.com/agordon/compute/bin/compute-1.0.4.5-20cc-bin__cygwin__win64.zip

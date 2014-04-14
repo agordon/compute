@@ -20,6 +20,7 @@ Pre-compiled binaries are available for the following platforms:
 * [Linux-64bit]({{site.compute_bin_linux_64bit_url}})
 * [Mac OS X]({{site.compute_bin_macosx_url}})
 * [FreeBSD 10-64bit]({{site.compute_bin_freebsd_64bit_url}})
+* [Windows 64bit]({{site.compute_bin_win64_url}})
 
 ### HomeBrew/LinuxBrew
 
