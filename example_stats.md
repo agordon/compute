@@ -27,7 +27,7 @@ compute supports the following statistical operations:
 18. **jarque** - p-Value of Jarque-Bera test for normality ([details](http://en.wikipedia.org/wiki/Jarque%E2%80%93Bera_test)).
 19. **dpo**   - p-Value of D'Agostino-Pearson Omnibus test for normality ([details](http://en.wikipedia.org/wiki/D%27Agostino%27s_K-squared_test#Omnibus_K2_statistic)).
 
-### Equivalent to R functions
+### Equivalent R functions
 
 compute is designed to closely follow [R project](http://www.r-project.org/)'s
 statistical functions. See the [R equivalent code](./files/operators.R) for each
